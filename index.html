@@ -5,9 +5,39 @@
     <meta name="viewport" content="width=device-width">
     <title>test</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script src="script.js" type="module"></script>
+    <script type="module">
+      function log (whattolog) {
+        alert(whattolog);
+      }
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyAH4LAMTUc8BsgBRQBtflxJScmZjXZHHO8",
+        authDomain: "tpmssg-b225d.firebaseapp.com",
+        projectId: "tpmssg-b225d",
+        storageBucket: "tpmssg-b225d.appspot.com",
+        messagingSenderId: "463547437501",
+        appId: "1:463547437501:web:cc032c2c76b27ea4cd02d4",
+        measurementId: "G-4G6VP1TYHJ"
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const data = firebase.firestore();
+
+      const variable = (function() {
+          const root = function() {
+              log("ermmm what the sigma");
+          };
+          root.create = function(name, value) {
+            await data.collection('test').doc('test').set({ value: value });
+            log(`variable.create() called with value: ${value}`);
+          };
+          return root;
+      })();
+      log("here");
+      
+    </script>
   </head>
   <body>
 
