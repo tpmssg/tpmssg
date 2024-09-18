@@ -34,21 +34,21 @@
       log("4");
     </script>
     <script>
-      const app = firebase.initializeApp(firebaseConfig);
+      const app = initializeApp(firebaseConfig);
       log("5");
     </script>
     <script> 
-      const analytics = firebase.getAnalytics(app);
+      const analytics = getAnalytics(app);
       log("6");
     </script>
     <script> 
-      const data = firebase.firestore();
+      const data = firestore();
       log("7");
     </script>
   </head>
   <body>
 
-    <script>alert("DOWN");</script>
+    <script>alert("DONE");</script>
     <div id="game">
       <canvas width="1200" height="750" id="canvas" style="border:10px solid #000000;"></canvas>
     </div>
