@@ -6,6 +6,10 @@
     <title>test</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="script.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js"></script>
     <script>
       alert("1");
       function log (whattolog) {
@@ -13,13 +17,11 @@
         alert(whattolog);
       }
       log("2");
-    </script><script>log("works");</script>
-    <script>
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
-      log("3");
     </script>
     <script>
+      log("3");
+    </script>
+    <script> 
       const firebaseConfig = {
         apiKey: "AIzaSyAH4LAMTUc8BsgBRQBtflxJScmZjXZHHO8",
         authDomain: "tpmssg-b225d.firebaseapp.com",
@@ -32,23 +34,16 @@
       log("4");
     </script>
     <script>
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-      const data = firebase.firestore();
+      const app = firebase.initializeApp(firebaseConfig);
       log("5");
     </script>
-    <script>
-      const variable = (function() {
-          const root = function() {
-              log("ermmm what the sigma");
-          };
-          root.create = function(name, value) {
-            await data.collection('test').doc('test').set({ value: value });
-            log(`variable.create() called with value: ${value}`);
-          };
-          return root;
-      })();
+    <script> 
+      const analytics = firebase.getAnalytics(app);
       log("6");
+    </script>
+    <script> 
+      const data = firebase.firestore();
+      log("7");
     </script>
   </head>
   <body>
