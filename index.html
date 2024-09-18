@@ -6,15 +6,20 @@
     <title>test</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="script.js" type="module"></script>
-    <script>alert("ToOP");</script>
     <script>
+      alert("1");
       function log (whattolog) {
         //log("here"); is used to see where there is an error
         alert(whattolog);
       }
-      log("here");
+      log("2");
+    </script>
+    <script>
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+      log("3");
+    </script>
+    <script>
       const firebaseConfig = {
         apiKey: "AIzaSyAH4LAMTUc8BsgBRQBtflxJScmZjXZHHO8",
         authDomain: "tpmssg-b225d.firebaseapp.com",
@@ -24,11 +29,15 @@
         appId: "1:463547437501:web:cc032c2c76b27ea4cd02d4",
         measurementId: "G-4G6VP1TYHJ"
       };
-      log("here");
+      log("4");
+    </script>
+    <script>
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
       const data = firebase.firestore();
-
+      log("5");
+    </script>
+    <script>
       const variable = (function() {
           const root = function() {
               log("ermmm what the sigma");
@@ -39,8 +48,7 @@
           };
           return root;
       })();
-      log("here");
-      
+      log("6");
     </script>
   </head>
   <body>
